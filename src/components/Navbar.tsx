@@ -49,6 +49,9 @@ function Navbar() {
        {isAuth && (
          <Link href="/" className='bg-black rounded-2xl text-white py-2 px-4' onClick={() => {
            sessionStorage.removeItem("isAuth");
+           localStorage.removeItem("token");
+           localStorage.removeItem("email");
+           localStorage.removeItem("customer_id");
            window.location.href = "/";
          }}>Logout</Link>
        )}

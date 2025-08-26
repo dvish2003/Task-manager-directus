@@ -22,10 +22,13 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     const response = await axios.post('/api/login', formdata);
     if (response.status === 200) {
         const token = response.data.token;  
+        const user = response.data.user;
       alert('Login successful');
       setFormdata({ email: '', password: '' });
       localStorage.setItem('token',token);
       sessionStorage.setItem('isAuth', 'true');
+      localStorage.setItem('email', formdata.email);
+      localStorage.setItem('customer_id', user.id);
       window.location.href = '/dashboard';
 
     } else if (response.status === 404) {
