@@ -35,7 +35,6 @@ function page() {
       });
 
     if (response.status !== 200) {
-      // Handle error
       console.log('Failed to create task');
       return;
     }

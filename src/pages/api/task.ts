@@ -29,7 +29,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const { name, description, customer_email, customer_id } = await req.body as { name: string, description: string, customer_email: string, customer_id: string };
         console.log('....................................................6')
 
-  const mutation = `
+const mutation = `
   mutation({
     create_task(
       data: {
